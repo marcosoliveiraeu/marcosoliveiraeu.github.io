@@ -916,6 +916,11 @@ a:focus {
     border-color: rgba(7, 14, 58, 0.973);
 }
 
+.portfolio .portfolio-text:hover {
+   
+    background-color:rgba(103, 121, 240, 0.973);
+   
+}
 
 /*******************************/
 /********* Banner CSS **********/
