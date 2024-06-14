@@ -876,6 +876,7 @@ a:focus {
 
 .portfolio .portfolio-item:hover img {
     margin-left: 15px;
+    content: "React, .net web api, Identity , JWT Token, SqlServer";
 }
 
 .portfolio .portfolio-text {
@@ -914,12 +915,51 @@ a:focus {
     background: transparent;
     box-shadow: inset 0 0 0 0 rgba(7, 14, 58, 0.973);
     border-color: rgba(7, 14, 58, 0.973);
+   
 }
 
 .portfolio .portfolio-text:hover {
    
     background-color:rgba(103, 121, 240, 0.973);
+    
    
+}
+
+.portfolio-wrap::after {
+    content: "React, .net web api, Identity , JWT Token, SqlServer";
+    position: absolute; /* Permite posicionar o tooltip relativo ao portfolio-wrap */
+    bottom: 50%; /* Posiciona o tooltip acima do contêiner */
+    left: 50%;
+    transform: translateX(-50%); /* Centraliza horizontalmente */
+    background-color: rgba(0, 0, 0, 0.75); /* Fundo do tooltip */
+    color: #fff; /* Cor do texto */
+    padding: 5px 10px; /* Espaçamento interno do tooltip */
+    border-radius: 4px; /* Bordas arredondadas */
+    white-space: nowrap; /* Evita quebra de linha no texto */
+    opacity: 0; /* Inicialmente invisível */
+    visibility: hidden; /* Inicialmente escondido */
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; /* Transição suave */
+    z-index: 1; /* Garante que o tooltip fique acima de outros elementos */
+}
+
+.portfolio-wrap::before {
+    content: "";
+    position: absolute;
+    bottom: 110%; /* Ajuste conforme a altura do tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.75) transparent transparent transparent; /* Cria a seta do tooltip */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.portfolio-wrap:hover::after,
+.portfolio-wrap:hover::before {
+    opacity: 1; /* Torna o tooltip visível */
+    visibility: visible; /* Exibe o tooltip */
 }
 
 /*******************************/
